@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "text">こんにちは</h1>    
+    
+    <script>
+        const h1 = document.getElementById("text");
+        let count = 0;
+        
+        const timer = setInterval(() => {
+            h1.style.fontSize = count + 'px';
+            count++;
+            
+            if(count >= 100) {
+                clearInterval(timer);
+                h1.style.fontSize = 0 + 'px';
+            }
+        }, 10);
+        
+    </script>
+    
+</body>
+</html>

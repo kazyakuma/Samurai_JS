@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #dialog{
+            width: 250px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #aaa;
+            box-shadow: 2px 2px 4px #888;
+        }
+    </style>
+</head>
+<body>
+    <form id = "dialog" name = "dialog">
+        <p>ボタンをクリックしてください</p>
+        <input type = "button" name = "yes" value = "はい">
+        <input type = "button" name = "no" value = "いいえ">
+        <input type = "button" name = "cancel" value = "キャンセル">
+        <p id = "view"></p>
+    </form>
+    
+    <script>
+        const form = document.forms.dialog;
+        
+        form.yes.addEventListener("click", () => {
+           console.log("「はい」がクリックされました"); 
+           document.getElementById("view").textContent = "はいがクリックされました";
+        });
+        form.no.addEventListener("click", () => {
+           console.log("「いいえ」がクリックされました"); 
+           document.getElementById("view").textContent = "いいえがクリックされました";
+        });
+        form.cancel.addEventListener("click", () => {
+           console.log("「キャンセル」がクリックされました"); 
+           document.getElementById("view").textContent = "キャンセルがクリックされました";
+        });
+    </script>
+</body>
+</html>

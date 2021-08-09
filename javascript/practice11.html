@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript関連のリポジトリ総数by GitHub</h1>
+    <button id = "btn">更新</button>
+    <p>リポジトリの総数は、<span id = "number">1</span>件です。</p>
+  <script>
+    const url = 'https://api.github.com/search/repositories?q=javascript'
+    const btn = document.getElementById('btn');
+    const number = document.getElementById('number');
+    
+    
+    
+    btn.addEventListener('click', () => {
+        number.innerHTML = '';
+        
+        fetch(url)
+        .then(data => data.total_count)
+        .then(number.appendChild(data))
+        
+    })
+    /*
+    const url = 'https://qiita.com/api/v2/tags/javascript/items';
+    const btn = document.getElementById('btn');
+    const list = document.getElementById('list');
+    
+    const createList = item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        
+        a.href = item.url;
+        li.textContent = item.title;
+        
+        a.appendChild(li);
+        list.appendChild(a);
+    }
+    
+    btn.addEventListener('click', () => {
+        list.innerHTML = '';
+        
+        fetch(url)
+        .then(data => data.json())
+        .then(data => {
+            data.forEach(item => createList(item))
+        })
+    })
+    */
+  </script>
+</html>

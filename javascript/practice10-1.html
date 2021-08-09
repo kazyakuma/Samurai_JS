@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id = "text" cos = "50" rows = "7"></textarea>
+    <p id = "count">0文字</p>
+    
+    <script>
+        const text = document.getElementById("text");
+        const count = document.getElementById("count");
+        
+        text.addEventListener("keyup", ()=> {
+            const inputText = text.value;
+            const inputTex = inputText.replace(/\n|\s/g, "");
+            count.textContent = inputTex.length + "文字";
+        }) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*ユーザーに名前と電話番号を入力してもらい、その値をuserオブジェクトに格納します。
+    そして、コンソールログにuserオブジェクトの中身を出力できれば完成です。
+    （ユーザーから入力してもらうには、5章で学習したpromptメソッドを使います）*/　
+    const contact = {
+        name : "山田太郎",
+        tel : 08012345678
+    }
+    
+    const name = prompt('名前を入力してください');
+    const tel = prompt('電話番号を入力してくださいs')
+    
+    contact.name = name;
+    contact.tel = tel;
+    
+    console.log(contact.name);
+    console.log(contact.tel);
+    
+  </script>
+</body>
+</html>
